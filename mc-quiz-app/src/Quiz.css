@@ -19,44 +19,37 @@ body {
     border-radius: 8px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-    position: absolute;
-  }
-  
-  .quiz-container.shrunk {
-    width: 25%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-  }
-  
-  .quiz-container.expanded {
-    width: 75%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-  }
-  
-  @media (max-width: 767px) {
-    .quiz-container.shrunk {
-      width: 100%;
-      height: 25vh;
-      top: 0;
-      left: 0;
-    }
-  
-    .quiz-container.expanded {
-      width: 100%;
-      height: 75vh;
-      top: 0;
-      left: 0;
-    }
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
   }
   
   .quiz-title {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .progress {
+    height: 100%;
+  }
+  
+  .progress.correct {
+    background-color: #4caf50;
+  }
+  
+  .progress.wrong {
+    background-color: #f44336;
   }
   
   .question-container {
@@ -74,7 +67,7 @@ body {
     margin-bottom: 10px;
   }
   
-  .submit-button, .expand-button {
+  .submit-button {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #3498db;
@@ -85,6 +78,6 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  .submit-button:hover, .expand-button:hover {
+  .submit-button:hover {
     background-color: #2980b9;
   }
