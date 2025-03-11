@@ -36,7 +36,7 @@ const Quiz = ({ goHome }) => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      console.log('Quiz completed! Answers:', answers);
+      goHome();
     }
   };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 
-const Home = ({ startQuiz }) => {
+const Home = ({ startQuiz, toggleFileUpload, showFileUpload }) => {
   const [studyPlan, setStudyPlan] = useState([]);
 
   useEffect(() => {
@@ -46,11 +46,13 @@ const Home = ({ startQuiz }) => {
               ))}
             </tbody>
           </table>
+          <button onClick={toggleFileUpload} className="upload-button">Upload Study Material</button>
         </div>
       ) : (
         <p>No study plan found.</p>
       )}
-      <button onClick={startQuiz} className="start-quiz-button">Start Quiz</button>
+      {!showFileUpload && <button onClick={startQuiz} className="start-quiz-button">Start Quiz</button>}
+      {showFileUpload && <button onClick={toggleFileUpload} className="go-back-button start-quiz-button">Go Back Home</button>}
     </div>
   );
 };
