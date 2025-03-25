@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import Planner from "./study-planner/Planner";
 
-const Home = ({ startQuiz }) => {
+const Home = ({ startQuiz, goPlanner }) => {
   const [studyPlan, setStudyPlan] = useState([]);
 
   useEffect(() => {
@@ -23,35 +24,38 @@ const Home = ({ startQuiz }) => {
   }, []);
 
   return (
-    <div className="home-container">
-      <h1>Welcome to the Quiz App</h1>
-      {studyPlan.length > 0 ? (
-        <div className="study-plan">
-          <h2>Last Study Plan</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Topic</th>
-                <th>Material</th>
-                <th>Hours</th>
-              </tr>
-            </thead>
-            <tbody>
-              {studyPlan.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.topic}</td>
-                  <td>{item.material}</td>
-                  <td className="hours">{item.hours}</td>
+      <div className="home-container">
+        <h1>Welcome to the Quiz App</h1>
+        {studyPlan.length > 0 ? (
+            <div className="study-plan">
+              <h2>Last Study Plan</h2>
+              <table>
+                <thead>
+                <tr>
+                  <th>Topic</th>
+                  <th>Material</th>
+                  <th>Hours</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <p>No study plan found.</p>
-      )}
-      <button onClick={startQuiz} className="start-quiz-button">Start Quiz</button>
-    </div>
+                </thead>
+                <tbody>
+                {studyPlan.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.topic}</td>
+                      <td>{item.material}</td>
+                      <td className="hours">{item.hours}</td>
+                    </tr>
+                ))}
+                </tbody>
+              </table>
+            </div>
+        ) : (
+            <p>No study plan found.</p>
+        )}
+
+
+
+        <button onClick={startQuiz} className="start-quiz-button">Start Quiz</button>
+      </div>
   );
 };
 
