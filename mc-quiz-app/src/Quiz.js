@@ -63,6 +63,36 @@ const Quiz = ({ goHome }) => {
     setEndQuiz(false);
   };
 
+  const saveAnswers = () => {
+    const existingData = localStorage.getItem("quizAnswers");
+    let allAnswers = [];
+
+    if (existingData) {
+      // Parse the existing JSON data and append the new answers
+      allAnswers = JSON.parse(existingData);
+    }
+
+    // Add the current answers to the existing data
+    allAnswers.push({
+      timestamp: new Date().toISOString(),
+      answers: answers,
+    });
+
+    // Save the updated data back to localStorage
+    localStorage.setItem("quizAnswers", JSON.stringify(allAnswers));
+
+    // Create a Blob and trigger a download
+    const blob = new Blob([JSON.stringify(allAnswers, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "quiz-answers.json";
+    a.click();
+    URL.revokeObjectURL(url); // Clean up the URL object
+  };
+
   return (
     <div className="quiz-container">
       <h1 className="quiz-title">Quiz</h1>
@@ -130,6 +160,12 @@ const Quiz = ({ goHome }) => {
             className="restart-button submit-button"
           >
             Restart Quiz
+          </button>
+          <button
+            onClick={saveAnswers}
+            className="save-button submit-button"
+          >
+            Save Answers
           </button>
         </div>
       ) : (
