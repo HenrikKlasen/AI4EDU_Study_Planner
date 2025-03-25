@@ -81,3 +81,66 @@ body {
   .submit-button:hover {
     background-color: #2980b9;
   }
+
+  .results-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.answers-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.answer-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.answer-item.correct {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.answer-item.wrong {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.restart-button {
+  margin-left: 10px;
+}
+
+.comparison-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.comparison-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comparison-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comparison-item.correct {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.comparison-item.wrong {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.comparison-item.improved {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
