@@ -69,7 +69,7 @@ const Quiz = ({ goHome }) => {
         ))}
       </div>
       <button onClick={handleSubmit} className="submit-button">Submit</button>
-      <button onClick={goHome} className="home-button">Home</button>
+      <button onClick={goHome} className="home-button submit-button">Home</button>
     </div>
   );
 };
