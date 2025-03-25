@@ -4,9 +4,21 @@ import {createViewWeek, createViewMonthGrid, createViewDay} from "@schedule-x/ca
 import "@schedule-x/theme-default/dist/calendar.css";
 import {createEventModalPlugin} from "@schedule-x/event-modal";
 
-const Planner = ({ goHome }) => {
-//function Planner() {
+const Planner = () => {
+    const savedStudyPlan = localStorage.getItem('studyPlan');
+    const studyPlan = savedStudyPlan ? JSON.parse(savedStudyPlan) : [];
+    const events = studyPlan.map((entry, index) => ({
+        id: entry.id ?? index + 1,
+        title: `${entry.topic}${entry.material ? ' (' + entry.material + ')' : ''}`,
+        start: entry.start,
+        end: entry.end,
+        description: `Study for ${entry.topic}, using ${entry.material}. Estimated time: ${entry.hours} hours`
+    }));
+
     console.log("Planner component rendered");
+    console.log("Saved studyPlan:", savedStudyPlan);
+    console.log("Raw studyPlan:", studyPlan);
+    console.log("Converted events:", events);
 
     const calendar = useCalendarApp({
     views: [
@@ -14,15 +26,7 @@ const Planner = ({ goHome }) => {
         createViewMonthGrid(),
         createViewDay()
     ],
-    events: [
-        {
-          id: 1,
-          title: "Dummy Event",
-          start: "2025-03-18 00:00",
-          end: "2025-03-18 03:00",
-          description: "Do your AI4Edu project!!!"
-        }
-    ],
+    events: events,
     selectedDate: "2025-03-18",
     plugins: [
         createEventModalPlugin()

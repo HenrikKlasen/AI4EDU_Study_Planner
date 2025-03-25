@@ -12,10 +12,10 @@ const Home = ({ startQuiz, toggleFileUpload, showFileUpload }) => {
     } else {
       // Set a demo study plan if none is found
       const demoStudyPlan = [
-        { topic: 'Introduction to React', material: 'Chapter 1', hours: 2 },
-        { topic: 'JSX and Components', material: 'Chapter 2', hours: 3 },
-        { topic: 'State and Props', material: 'Chapter 3', hours: 2.5 },
-        { topic: 'Building a Small Project', material: 'Project Guide', hours: 4 },
+        { topic: 'Introduction to React', material: 'Chapter 1', hours: 2, id: 1, start: "2025-03-18 00:00", end: "2025-03-18 02:00" },
+        { topic: 'JSX and Components', material: 'Chapter 2', hours: 3, id: 2, start: "2025-03-18 03:00", end: "2025-03-18 06:00" },
+        { topic: 'State and Props', material: 'Chapter 3', hours: 2.5, id: 3, start: "2025-03-18 06:00", end: "2025-03-18 08:30" },
+        { topic: 'Building a Small Project', material: 'Project Guide', hours: 4, id: 4, start: "2025-03-19 00:00", end: "2025-03-19 04:00" },
       ];
       localStorage.setItem('studyPlan', JSON.stringify(demoStudyPlan));
       setStudyPlan(demoStudyPlan);
