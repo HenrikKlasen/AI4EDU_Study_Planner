@@ -27,6 +27,7 @@
   display: flex; /* Use flexbox for alignment */
   justify-content: center; /* Center horizontally */
   margin-left: 70px;
+  margin-right: 20px;
   right: 0;
 }
 
