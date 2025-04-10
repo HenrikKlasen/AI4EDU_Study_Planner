@@ -60,7 +60,7 @@ def summarize_pdf(file_path):
     loader = PyPDFLoader(file_path)
     documents = loader.load()
 
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=device)
+    summarizer = pipeline("summarization", model="google-t5/t5-large", device=device, trust_remote_code=True)
 
     # Combine all document pages into a single string
     full_text = " ".join([doc.page_content for doc in documents])
