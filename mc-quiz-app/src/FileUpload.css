@@ -8,6 +8,8 @@
     background-color: #f9f9f9;
     width: 80%;
     max-width: 600px;
+    min-height: 350px;
+    max-height: 500px;
     margin: 20px auto;
     text-align: center;
   }
@@ -17,7 +19,7 @@
   }
   
   .file-upload-container p {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #666;
   }
   
@@ -34,6 +36,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 20px;
   }
   
   .file-upload-container label:hover {
@@ -48,6 +51,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 10px;
   }
   
   .file-upload-container button:disabled {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FileUpload.css';
 
-const FileUpload = () => {
+const FileUpload = ( { goHome }) => {
   const [files, setFiles] = useState([]);
 
   const handleFileChange = (event) => {
@@ -61,6 +61,9 @@ const FileUpload = () => {
           </ul>
         </div>
       )}
+      <button onClick={goHome} className="home-button submit-button">
+            Go Home
+      </button>
     </div>
   );
 };
