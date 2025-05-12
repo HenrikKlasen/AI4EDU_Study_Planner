@@ -74,6 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #### `npm install @schedule-x/react @schedule-x/theme-default`
 #### `npm install @schedule-x/calendar`
 #### `npm install @schedule-x/event-modal`
+#### `npm i @schedule-x/events-service`
 
 # Gemini Api
 

@@ -15,38 +15,3 @@ body {
     place-items: center;
     min-width: 320px;
 }
-
-.planner-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #f94680;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.planner-button:hover {
-    background-color: #c05780;
-}
-
-.create-plan-button {
-    margin-top: 20px;
-    margin-left: 5px;
-    padding: 10px 20px;
-    background-color: #c9c9c9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.create-plan-button:hover {
-    background-color: #c05780;
-}
