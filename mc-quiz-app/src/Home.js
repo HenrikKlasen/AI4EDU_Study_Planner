@@ -37,6 +37,12 @@ const Home = ({ startQuiz, toggleFileUpload, showFileUpload, startFileUpload }) 
       <h1 className="title-container">Welcome to the Quiz App</h1>
       <div className="layout-container">
         <div className="buttons-container">
+          <button onClick={toggleFileUpload && startFileUpload} className="upload-button">
+            Upload Study Material
+          </button>
+          <button onClick={toggleFileUpload && startFileUpload} className="upload-button">
+            Summarize Study Material
+          </button>
           {!showFileUpload && (
             <button onClick={startQuiz} className="start-quiz-button">
               Start Quiz
@@ -50,9 +56,6 @@ const Home = ({ startQuiz, toggleFileUpload, showFileUpload, startFileUpload }) 
               Go Back Home
             </button>
           )}
-          <button onClick={toggleFileUpload && startFileUpload} className="upload-button">
-            Upload Study Material
-          </button>
         </div>
         {studyPlan.length > 0 ? (
           <div className="study-plan-container">
