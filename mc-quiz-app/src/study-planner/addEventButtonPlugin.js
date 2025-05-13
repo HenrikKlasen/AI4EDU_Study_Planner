@@ -24,7 +24,7 @@ class AddEventButtonPlugin {
         button.id = 'add-event-button';
         button.innerText = 'Add Event';
         button.style.fontSize = '14px';
-        button.style.marginLeft = 'auto';
+        button.style.marginLeft = '';
         button.style.padding = '12px 16px';
         button.style.backgroundColor = '#3498db';
         button.style.color = 'white';
@@ -42,7 +42,9 @@ class AddEventButtonPlugin {
             };
             this.eventsService.add(newEvent);
         });
+
         header.appendChild(button);
+        document.querySelector('.sx__calendar-header').style.justifyContent = 'flex-start';
     }
 }
 
