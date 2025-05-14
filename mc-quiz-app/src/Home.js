@@ -34,7 +34,7 @@ const Home = ({ startQuiz, toggleFileUpload, showFileUpload, startFileUpload }) 
 
   return (
     <div className="home-container">
-      <h1 className="title-container">Welcome to the Quiz App</h1>
+      <h1 className="title-container">Welcome to StudyPlAIner</h1>
       <div className="layout-container">
         <div className="buttons-container">
           <button onClick={toggleFileUpload && startFileUpload} className="upload-button">
